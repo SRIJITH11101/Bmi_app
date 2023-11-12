@@ -1,3 +1,4 @@
+import 'package:bmi/calculate.dart';
 import 'package:bmi/result.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi/card.dart';
@@ -198,11 +199,16 @@ class _InputPageState extends State<InputPage> {
             ),
             GestureDetector(
               onTap: () {
+                Resultcalculate calc =
+                    Resultcalculate(height: height, weight: weight);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return const ResulPage();
+                      return ResulPage(
+                          intrepretate: calc.CalcBMI(),
+                          bmiresults: calc.GetResults(),
+                          resultText: calc.interpString());
                     },
                   ),
                 );

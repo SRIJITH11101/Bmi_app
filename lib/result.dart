@@ -3,8 +3,14 @@ import 'package:bmi/constant.dart';
 import 'package:flutter/material.dart';
 
 class ResulPage extends StatelessWidget {
-  const ResulPage({super.key});
-
+  //const ResulPage({super.key});
+  ResulPage(
+      {required this.intrepretate,
+      required this.bmiresults,
+      required this.resultText});
+  final String intrepretate;
+  final String bmiresults;
+  final String resultText;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,8 +40,18 @@ class ResulPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('Normal'),
-                    Text('kjbckabkcbajkcbjabcbajkcbakjcbjabcjasbckjabcjk')
+                    Text(
+                      resultText,
+                      style: resulttext,
+                    ),
+                    Text(
+                      bmiresults,
+                      style: bmitext,
+                    ),
+                    Text(
+                      intrepretate,
+                      style: bodytext,
+                    )
                   ],
                 ))),
             GestureDetector(
